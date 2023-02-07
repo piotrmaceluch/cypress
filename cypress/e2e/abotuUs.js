@@ -10,12 +10,10 @@ Cypress.once('uncaught:exception', (err, runnable) => {
       cy.contains('h1','About us')
     })
     
-    it.only('should see "management" tab', () => {
+    it('should see "management" tab', () => {
         cy.visit('/about-us/#management')
         cy.get('#cookie_action_accept').click()
         cy.contains('h2','Management')
-        // cy.contains('.elementor-heading-title','Leszek Pankiewicz')
-        // cy.contains('.elementor-heading-title','MACIEJ PUCHALSKI')
     })
 
     it('should see "culture and policies" tab', () => {
@@ -42,6 +40,14 @@ Cypress.once('uncaught:exception', (err, runnable) => {
         cy.contains('h2','Solwit S.A. subsidiary')
     })
 
+    it.only('should see correct content about CEO', () => {
+        cy.visit('/about-us/#management')
+        cy.get('#cookie_action_accept').click()
+        cy.get('.icon-right-arrow2').first().click()
+        cy.contains('h1','Leszek Pankiewicz')
+        cy.contains('p','A graduate of the Faculty of Electronics')        
+        
+    })
 
   })
   
