@@ -3,6 +3,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   });
   
   export class BasePage {
+    
     acceptCookiesPl() {
         cy.contains('Akceptuj').click()
     }
