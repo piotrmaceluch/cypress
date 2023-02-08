@@ -29,47 +29,16 @@ describe('Testing careera tab', () => {
     onCareerPage.meetTheHrTeamShouldContainRightText()
   })
 
-  it('"\You work as you please"\ tile should contain right text',()=>{
+  it.only('Tiles should contain right text',()=>{
+    onCareerPage.youWorkAsYouPleaseTileShouldContainRightText()
     onCareerPage.availableTypesOfEmploymentTileShouldContainRightText()
-  })
-
-  it('"\Available types of employment"\ tile should contain right text',()=>{
-    onCareerPage.availableTypesOfEmploymentTileShouldContainRightText()
-  })
-
-  it('"\Money bonuses"\ tile should contain right text',()=>{
     onCareerPage.moneyBonusesTypesOfEmploymentTileShouldContainRightText()
-  })
-
-  it('"\Development opportunities"\ tile should contain right text',()=>{
     onCareerPage.developmentOpportunitiesTypesOfEmploymentTileShouldContainRightText()
-  })
-
-  it('"\You can choose a path for yourself"\ tile should contain right text',()=>{
     onCareerPage.youCanChooseAPathForYourselfTypesOfEmploymentTileShouldContainRightText()
-  })
-
-  it('"\Solwit is dog-friendly"\ tile should contain right text',()=>{
     onCareerPage.solwitIsDogFriendlyTileShouldContainRightText()
-  })
-
-  it('"\Free large underground car parking"\ tile should contain right text',()=>{
     onCareerPage.freeLargeUndergroundCarParkingTileShouldContainRightText()
-  })
-
-  it('"\For your safety"\ tile should contain right text',()=>{
     onCareerPage.forYourSafetyTileShouldContainRightText()
-  })
-
-  it('"\We support your passions"\ tile should contain right text',()=>{
     onCareerPage.weSupportYourPassionsTileShouldContainRightText()
   })
-
-
-  
-
-
-   
-
 
 })

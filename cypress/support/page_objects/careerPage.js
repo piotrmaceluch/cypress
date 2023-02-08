@@ -32,13 +32,13 @@ import { BasePage } from "./basePage";
       cy.get(`div[class='elementor-element elementor-element-3aea135 elementor-widget elementor-widget-heading'] h6[class='elementor-heading-title elementor-size-default']`).should('include.text','Meet the HR Team:')
     }
 
-    availableTypesOfEmploymentTileShouldContainRightText(){
+    youWorkAsYouPleaseTileShouldContainRightText(){
       cy.get(`div[class='elementor-element elementor-element-1b96c3d elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box'] p[class='elementor-icon-box-description']`).should('include.text','\n\t\t\t\t\t\tYou work as you please: at home, at the office, or hybrid – the choice is yours!\t\t\t\t\t')
     }
 
     availableTypesOfEmploymentTileShouldContainRightText(){
       cy.get(`div[class='elementor-element elementor-element-b2596dd elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box'] p[class='elementor-icon-box-description']`).should('include.text','\n\t\t\t\t\t\tAvailable types of employment: contract of employment or B2B-contracts\t\t\t\t\t')
-    }//
+    }
 
     moneyBonusesTypesOfEmploymentTileShouldContainRightText(){
       cy.get(`div[class='elementor-element elementor-element-8ddcde7 elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box'] p[class='elementor-icon-box-description']`).should('include.text','for blog articles, recommendations of new employees, sales team support, conducting training, substantive support in the recruitment process					')
