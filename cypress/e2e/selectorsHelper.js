@@ -11,7 +11,6 @@ describe("My first suite", () => {  //context()
         // by Tag Name
         cy.get('input')
 
-
         // by #ID
         cy.get('#inputEmail1')
 
