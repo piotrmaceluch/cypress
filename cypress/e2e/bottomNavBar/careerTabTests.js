@@ -29,8 +29,8 @@ describe('Testing careera tab', () => {
     onCareerPage.meetTheHrTeamShouldContainRightText()
   })
 
-  it.only('Tiles should contain right text',()=>{
-    onCareerPage.youWorkAsYouPleaseTileShouldContainRightText()
+  it('Tiles should contain right text',()=>{
+    onCareerPage.checkIfTileContainsRightText()
     onCareerPage.availableTypesOfEmploymentTileShouldContainRightText()
     onCareerPage.moneyBonusesTypesOfEmploymentTileShouldContainRightText()
     onCareerPage.developmentOpportunitiesTypesOfEmploymentTileShouldContainRightText()
@@ -39,6 +39,20 @@ describe('Testing careera tab', () => {
     onCareerPage.freeLargeUndergroundCarParkingTileShouldContainRightText()
     onCareerPage.forYourSafetyTileShouldContainRightText()
     onCareerPage.weSupportYourPassionsTileShouldContainRightText()
+  })
+
+  it('#SolwitTeam should contain right text',()=>{
+    onCareerPage.solwitTeamShouldContainRightText()
+  })
+
+  it('To find out more about working should contain right text',()=>{
+    onCareerPage.toFindOutMoreAboutWorking()
+  })
+
+  it.only('Check redirection to Facebook/Instagram/LinkedIn pages',()=>{
+    onCareerPage.checkRedirectionToFacebookPage()
+    onCareerPage.checkRedirectionToInstagramPage()
+    onCareerPage.checkRedirectionToLinkedInPage()
   })
 
 })
