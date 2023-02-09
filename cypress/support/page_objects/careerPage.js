@@ -32,7 +32,7 @@ import { BasePage } from "./basePage";
       cy.get(`div[class='elementor-element elementor-element-3aea135 elementor-widget elementor-widget-heading'] h6[class='elementor-heading-title elementor-size-default']`).should('include.text','Meet the HR Team:')
     }
 
-    youWorkAsYouPleaseTileShouldContainRightText(){
+    checkIfTileContainsRightText(){
       cy.get(`div[class='elementor-element elementor-element-1b96c3d elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box'] p[class='elementor-icon-box-description']`).should('include.text','\n\t\t\t\t\t\tYou work as you please: at home, at the office, or hybrid – the choice is yours!\t\t\t\t\t')
     }
 
@@ -69,6 +69,40 @@ import { BasePage } from "./basePage";
       cy.get(`div[class='elementor-element elementor-element-e7eaaef elementor-view-default elementor-mobile-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box'] p[class='elementor-icon-box-description']`).should('include.text','\n\t\t\t\t\t\tWe support your passions\n(not only in terms of sports) we fund integrations and meetings (company, team, pro-health)\t\t\t\t\t')
     }
 
+    solwitTeamShouldContainRightText(){
+      cy.get(`h3[class='elementor-heading-title elementor-size-default']`).should('include.text','#SOLWITTEAM')
+    }
+
+    toFindOutMoreAboutWorking(){
+      cy.get(`div[class='elementor-element elementor-element-384d1cf elementor-widget elementor-widget-heading'] p[class='elementor-heading-title elementor-size-default']`).should('include.text','To find out more about working with us\ncheck out our profiles on social media!')
+    }
+
+    checkRedirectionToFacebookPage(){
+          cy.contains('Facebook')
+          .should('have.attr', 'target', '_blank')
+          .should('have.attr', 'href', 'https://www.facebook.com/Solwit')
+          .then(link => {
+            cy.request(link.prop('href'))
+              .its('status')
+              .should('eq', 200)});
+    }
+
+    checkRedirectionToInstagramPage(){
+      cy.contains('Instagram')
+      .should('have.attr', 'target', '_blank')
+      .should('have.attr', 'href', 'https://www.instagram.com/solwit_team')
+      .then(link => {
+        cy.request(link.prop('href'))
+          .its('status')
+          .should('eq', 200)});
+}
+
+checkRedirectionToLinkedInPage(){
+  cy.get(`a[class='elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-ca65bf1']`)
+  .should('have.attr', 'target', '_blank')
+  .should('have.attr', 'href', 'https://www.linkedin.com/company/solwit-sa/')
+
+}
 
 
 
