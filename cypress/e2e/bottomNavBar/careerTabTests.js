@@ -1,10 +1,10 @@
 import { onCareerPage } from "../../support/page_objects/careerPage.js"
 import {onMainPage} from "../../support/page_objects/mainPage.js"
 
-describe('Testing careera tab', () => {
+describe('Career tab', () => {
   beforeEach(() => {
     onMainPage.visit()
-    onMainPage.navigateToCareeraTab()
+    onMainPage.navigateToCareerTab()
     onMainPage.acceptCookiesEn()
   })
 
