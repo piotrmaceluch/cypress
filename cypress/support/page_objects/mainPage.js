@@ -1,7 +1,5 @@
 import { BasePage } from "./basePage";
 
-
-
 export class MainPage extends BasePage {
   visit() {
     cy.visit("/")

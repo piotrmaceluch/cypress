@@ -13,7 +13,7 @@ describe('Career tab', () => {
     onCareerPage.checkTitles()
   })
 
-  it('"\ Who are we looking for "\ section which doesn`t have any offers should contain right text', () => {
+  it('"\Who are we looking for"\ section should contain right text', () => {
     onCareerPage.whoAreWeLookingForSectionShouldContainRightText()
   })
 
@@ -25,11 +25,11 @@ describe('Career tab', () => {
     onCareerPage.whatWeOfferSectionShouldContainRightText()
   })
 
-  it('"\Meet the HR team "\ section should contain right text',()=>{
+  it('"\Meet the HR team"\ section should contain right text',()=>{
     onCareerPage.meetTheHrTeamShouldContainRightText()
   })
 
-  it.only('Tiles should contain right text',()=>{
+  it('Tiles should contain right text',()=>{
     onCareerPage.checkIfTextIsVisible(`You work as you please: at home, at the office, or hybrid – the choice is yours!`);
     onCareerPage.checkIfTextIsVisible(`Available types of employment: contract of employment or B2B-contracts`);
     onCareerPage.checkIfTextIsVisible(`Money bonuses: for blog articles, recommendations of new employees, sales team support, conducting training, substantive support in the recruitment process`);
@@ -41,19 +41,15 @@ describe('Career tab', () => {
     onCareerPage.checkIfTextIsVisible(`We support your passions (not only in terms of sports) we fund integrations and meetings (company, team, pro-health)`);
   })
 
-  it('#SolwitTeam should contain right text',()=>{
-    onCareerPage.solwitTeamShouldContainRightText()
+  it('#SolwitTeam section should contain right text',()=>{
+    onCareerPage.checkIfTextIsVisible(`To find out more about working with us check out our profiles on social media!`)
   })
 
-  it('To find out more about working should contain right text',()=>{
-    onCareerPage.toFindOutMoreAboutWorking()
-  })
 
   it('Check redirection to Facebook/Instagram/LinkedIn pages',()=>{
     onCareerPage.checkRedirectionToFacebookPage()
     onCareerPage.checkRedirectionToInstagramPage()
     onCareerPage.checkRedirectionToLinkedInPage()
   })
-
 
 })
