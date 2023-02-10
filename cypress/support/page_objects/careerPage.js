@@ -7,7 +7,7 @@ export class CareerPage extends BasePage {
   }
 
   checkTitles() {
-    cy.title().should('eq', 'Career – Solwit') //Career – Solwit Kariera – Solwit
+    cy.title().should('eq', 'Career – Solwit')
     cy.contains(`div[class='elementor-widget-container'] h1[class='elementor-heading-title elementor-size-default']`, 'Career')
   }
 
@@ -59,7 +59,6 @@ export class CareerPage extends BasePage {
   checkIfTextIsVisible(text) {
     cy.scrollTo('center')
     cy.scrollTo('bottom')
-    //cy.get(`div[class='elementor-element elementor-element-cd3b5dd elementor-widget elementor-widget-heading']`).scrollTo('bottom')
     cy.contains(text).should('be.visible')
   }
 }

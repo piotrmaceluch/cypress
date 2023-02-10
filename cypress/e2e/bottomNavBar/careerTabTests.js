@@ -8,7 +8,7 @@ describe('Career tab', () => {
     onMainPage.acceptCookiesEn()
   })
 
-  
+
   it('Career tab should contain right titles', () => {
     onCareerPage.checkTitles()
   })
@@ -30,21 +30,16 @@ describe('Career tab', () => {
   })
 
   it('Tiles should contain right text',()=>{
-    onCareerPage.checkIfTextIsVisible(`You work as you please: at home, at the office, or hybrid – the choice is yours!`);
-    onCareerPage.checkIfTextIsVisible(`Available types of employment: contract of employment or B2B-contracts`);
-    onCareerPage.checkIfTextIsVisible(`Money bonuses: for blog articles, recommendations of new employees, sales team support, conducting training, substantive support in the recruitment process`);
-    onCareerPage.checkIfTextIsVisible(`Development opportunities:internal training (Solwit Academy of Development), acting as an internal trainer, external training, certifications, language platform, e-learning training`);
-    onCareerPage.checkIfTextIsVisible(`You can choose a path for yourself – either an engineering or managerial one`);
-    onCareerPage.checkIfTextIsVisible(`Solwit is dog-friendly, but above all people-friendly, as confirmed by the AudIT survey for the 3rd year in a row`);
-    onCareerPage.checkIfTextIsVisible(`Free large underground car parking no need to book, no hassle`);
-    onCareerPage.checkIfTextIsVisible(`For your safety:we provide medical insurance (TU Zdrowie), life insurance, and for health - Multisport card`);
-    onCareerPage.checkIfTextIsVisible(`We support your passions (not only in terms of sports) we fund integrations and meetings (company, team, pro-health)`);
+    onCareerPage.checkIfTextIsVisible(`You work as you please: at home, at the office, or hybrid – the choice is yours!`)
+    onCareerPage.checkIfTextIsVisible(`Available types of employment: contract of employment or B2B-contracts`)
+    onCareerPage.checkIfTextIsVisible(`Money bonuses: for blog articles, recommendations of new employees, sales team support, conducting training, substantive support in the recruitment process`)
+    onCareerPage.checkIfTextIsVisible(`Development opportunities:internal training (Solwit Academy of Development), acting as an internal trainer, external training, certifications, language platform, e-learning training`)
+    onCareerPage.checkIfTextIsVisible(`You can choose a path for yourself – either an engineering or managerial one`)
+    onCareerPage.checkIfTextIsVisible(`Solwit is dog-friendly, but above all people-friendly, as confirmed by the AudIT survey for the 3rd year in a row`)
+    onCareerPage.checkIfTextIsVisible(`Free large underground car parking no need to book, no hassle`)
+    onCareerPage.checkIfTextIsVisible(`For your safety:we provide medical insurance (TU Zdrowie), life insurance, and for health - Multisport card`)
+    onCareerPage.checkIfTextIsVisible(`We support your passions (not only in terms of sports) we fund integrations and meetings (company, team, pro-health)`)
   })
-
-  it('#SolwitTeam section should contain right text',()=>{
-    onCareerPage.checkIfTextIsVisible(`To find out more about working with us check out our profiles on social media!`)
-  })
-
 
   it('Check redirection to Facebook/Instagram/LinkedIn pages',()=>{
     onCareerPage.checkRedirectionToFacebookPage()
@@ -52,4 +47,7 @@ describe('Career tab', () => {
     onCareerPage.checkRedirectionToLinkedInPage()
   })
 
+  it('#SolwitTeam section should contain right text',()=>{
+    onCareerPage.checkIfTextIsVisible(`To find out more about working with us check out our profiles on social media!`)
+  })
 })
