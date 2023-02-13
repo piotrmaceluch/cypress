@@ -4,7 +4,7 @@ import {onMainPage} from "../../support/page_objects/mainPage.js"
 describe('Career tab', () => {
   beforeEach(() => {
     onMainPage.visit()
-    onMainPage.navigateToCareerTab()
+    onMainPage.navigateToTab('CAREER')
     onMainPage.acceptCookiesEn()
   })
 

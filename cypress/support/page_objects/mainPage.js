@@ -6,9 +6,11 @@ export class MainPage extends BasePage {
     cy.title().should('eq', "Solwit - Software Development Company | IoT | Tests | Cloud Transformation | Outsourcing")
   }
 
-  navigateToCareerTab() {
-    cy.contains('CAREER').click();
+  navigateToTab(tab) {
+    cy.contains(tab).click();
   }
+
+
 
   checkTitle() {
     cy.title().should('eq', 'Career – Solwit') //Career – Solwit Kariera – Solwit
