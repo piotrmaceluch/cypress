@@ -41,7 +41,7 @@ Cypress.once('uncaught:exception', (err, runnable) => {
         cy.contains('h2','Solwit S.A. subsidiary')
     })
 
-    it.only('should see correct content about CEO', () => {
+    it('should see correct content about CEO', () => {
         onMainPage.navigateToTab("ABOUT US +", "Management")
         cy.get('.icon-right-arrow2').first().click()
         cy.contains('h1','Leszek Pankiewicz')
@@ -50,5 +50,3 @@ Cypress.once('uncaught:exception', (err, runnable) => {
 
   })
   
-
-
