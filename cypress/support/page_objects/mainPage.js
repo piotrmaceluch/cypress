@@ -1,3 +1,4 @@
+import { get } from "cypress/types/lodash";
 import { BasePage } from "./basePage";
 
 
