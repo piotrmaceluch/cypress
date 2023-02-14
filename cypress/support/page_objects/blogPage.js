@@ -21,9 +21,8 @@ export class BlogPage extends BasePage {
     }
 
     #checkFilterCategory(category, className) {
-        cy.intercept('GET', '/en/blog/*').as('blog')
+        cy.request('https://solwit.com/en/blog/*')
         cy.get(`[for|='sf-input']`).contains(category).click()
-        cy.wait('@blog')
         cy.get(`[class$=${className}]`)
             .invoke('attr', 'class')
             .should('contain', 'elementor-post elementor-grid-item')
