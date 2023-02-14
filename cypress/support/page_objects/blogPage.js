@@ -18,20 +18,16 @@ export class BlogPage extends BasePage {
         this.#checkFilterCategory('Software development', 'tag-software-development')
         this.#checkFilterCategory('Solwit Team', 'tag-solwit-team-en')
         this.#checkFilterCategory('Tests', 'tag-tests-en-2')
-
-
-
-
     }
 
     #checkFilterCategory(category, className) {
-
-        cy.contains(`label[class='sf-label-radio']`[3]).click()
+        cy.intercept('GET', '/books', []).as('getBooks')
+        cy.wait('@getBooks')
+        cy.get(`[for|='sf-input']`).contains(category).click()
         cy.get(`[class$=${className}]`)
             .invoke('attr', 'class')
             .should('contain', 'elementor-post elementor-grid-item')
             .should('have.length.greaterThan', 1)
-        cy.contains(category).click()
     }
 }
 export const onBlogPage = new BlogPage()
