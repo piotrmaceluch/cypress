@@ -7,61 +7,68 @@ export class CareerPage extends BasePage {
   }
 
   checkTitles() {
-    cy.title().should('eq', 'Career – Solwit')
-    cy.contains(`div[class='elementor-widget-container'] h1[class='elementor-heading-title elementor-size-default']`, 'Career')
+    return cy.title()
+    //cy.contains(`div[class='elementor-widget-container'] h1[class='elementor-heading-title elementor-size-default']`, 'Career')
   }
 
-  whoAreWeLookingForSectionShouldContainRightText() {
-    cy.get(`div[class='elementor-element elementor-element-ab4a1e4 elementor-widget elementor-widget-heading'] h6[class='elementor-heading-title elementor-size-default']`).contains('Who are we looking for?')
-    cy.get(`div[class='elementor-element elementor-element-c6f01c0 elementor-widget elementor-widget-heading'] p[class='elementor-heading-title elementor-size-default']`).contains('Currently, we are looking only for candidates who speak Polish at least at an intermediate level. If you speak Polish well enough, take a look at our job offers')
-  }
+
   checkRedirectionToPlOffers() {
     cy.get(`span[class='elementor-button-text']`).click()
-    cy.title().should('eq', 'Kariera – Solwit')
+    return cy.title()
   }
 
-  whatWeOfferSectionShouldContainRightText() {
-    cy.get(`div[class='elementor-element elementor-element-fb6ba78 elementor-widget elementor-widget-heading'] `).should('include.text', 'What we offer:')
+  sectionShouldContainCorrectText(section) {
+    return cy.get(section)
   }
 
-  meetTheHrTeamShouldContainRightText() {
-    cy.get(`div[class='elementor-element elementor-element-3aea135 elementor-widget elementor-widget-heading'] h6[class='elementor-heading-title elementor-size-default']`).should('include.text', 'Meet the HR Team:')
+  shouldContainRightTextSectionMeetTheHrTeam() {
+    return cy.get(`div[class='elementor-element elementor-element-3aea135 elementor-widget elementor-widget-heading'] h6[class='elementor-heading-title elementor-size-default']`)
   }
 
   checkRedirectionToFacebookPage() {
-    cy.contains('Facebook')
+    return cy.contains('Facebook')
       .should('have.attr', 'target', '_blank')
       .should('have.attr', 'href', 'https://www.facebook.com/Solwit')
       .then(link => {
         cy.request(link.prop('href'))
           .its('status')
-          .should('eq', 200)
+
       });
   }
 
   checkRedirectionToInstagramPage() {
-    cy.contains('Instagram')
+    return cy.contains('Instagram')
       .should('have.attr', 'target', '_blank')
       .should('have.attr', 'href', 'https://www.instagram.com/solwit_team')
       .then(link => {
         cy.request(link.prop('href'))
           .its('status')
-          .should('eq', 200)
       });
   }
 
   checkRedirectionToLinkedInPage() {
-    cy.get(`a[class='elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-ca65bf1']`)
-      .should('have.attr', 'target', '_blank')
-      .should('have.attr', 'href', 'https://www.linkedin.com/company/solwit-sa/')
+    return cy.get(`a[class='elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-ca65bf1']`)
+
   }
 
   checkIfTextIsVisible(text) {
-    cy.scrollTo('center')
-    cy.scrollTo('bottom')
-    cy.contains(text).should('be.visible')
+    return cy.contains(text).scrollIntoView()
   }
+
+  getTextFromAllTilesFromSectionWhatWeOffer() {
+    return cy.get(`p[class="elementor-icon-box-description"]`)
+  }
+
+  checkFilterCategory() {
+    return cy.get(`a[href*='https://www.linkedin.com/in/']`)
+  }
+
 }
+
+
+
+
+
 
 export const onCareerPage = new CareerPage()
 

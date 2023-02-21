@@ -1,0 +1,35 @@
+{
+  "CareerTab": {
+    "WhatWeOfferSection": [
+      {
+        "Text": "You work as you please: at home, at the office, or hybrid – the choice is yours!"
+      },
+      {
+        "Text": "Available types of employment: contract of employment or B2B-contracts"
+      },
+      {
+        "Text": "Money bonuses:for blog articles, recommendations of new employees, sales team support, conducting training, substantive support in the recruitment process"
+      },
+      {
+        "Text": "Development opportunities:internal training (Solwit Academy of Development), acting as an internal trainer, external training, certifications, language platform, e-learning training"
+      },
+      {
+        "Text": "You can choose a path for yourself – either an engineering or managerial one"
+      },
+      {
+        "Text": "Solwit is dog-friendly, but above all people-friendly, as confirmed by the AudIT survey for the 3rd year in a row"
+      },
+      {
+        "Text": "Free large underground car parking no need to book, no hassle"
+      },
+      {
+        "Text": "For your safety:we provide medical insurance (TU Zdrowie), life insurance, and for health - Multisport card"
+      },
+      {
+        "Text": "We support your passions(not only in terms of sports) we fund integrations and meetings (company, team, pro-health)"
+      }
+    ],
+    "WhoAreWeLookingFor": "Currently, we are looking only for candidates who speak Polish at least at an intermediate level. If you speak Polish well enough, take a look at our job offers",
+    "#SolwitTeam":"To find out more about working with us check out our profiles on social media!"
+  }
+}
