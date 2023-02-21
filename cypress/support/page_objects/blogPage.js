@@ -9,6 +9,9 @@ export class BlogPage extends BasePage {
         cy.title().should('eq', 'Blog – Solwit')
         cy.contains(`div[class='elementor-widget-container'] h1[class='elementor-heading-title elementor-size-default']`, 'Welcome to our Blog!')
     }
+    getTitle() {
+        return cy.title()
+    }
 
     checkAllFilterCategory() {
         this.#checkFilterCategory('Cloud services', 'tag-cloud-services-en')
@@ -28,5 +31,6 @@ export class BlogPage extends BasePage {
             .should('contain', 'elementor-post elementor-grid-item')
             .should('have.length.greaterThan', 1)
     }
+
 }
 export const onBlogPage = new BlogPage()

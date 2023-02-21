@@ -8,11 +8,11 @@ describe('Blog tab', () => {
         onMainPage.navigateToTab('BLOG')
     })
 
-    it('Blog tab should contain right titles', () => {
-        onBlogPage.checkTitles()
+    it('Blog tab should contain right title', () => {
+       onBlogPage.getTitle().should('eq', 'Blog – Solwit')
     })
 
-    it.only('Test categories of articles',()=>{
+    it('Test categories of articles',()=>{
         onBlogPage.checkAllFilterCategory()
     })
 })
