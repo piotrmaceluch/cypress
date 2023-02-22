@@ -21,7 +21,7 @@ export class CareerPage extends BasePage {
     return cy.get(section)
   }
 
-  shouldContainRightTextSectionMeetTheHrTeam() {
+  shouldContainCorrectTextSectionMeetTheHrTeam() {
     return cy.get(`div[class='elementor-element elementor-element-3aea135 elementor-widget elementor-widget-heading'] h6[class='elementor-heading-title elementor-size-default']`)
   }
 
