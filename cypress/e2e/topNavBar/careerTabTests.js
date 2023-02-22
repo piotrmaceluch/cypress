@@ -14,7 +14,7 @@ describe('Career tab', () => {
   const meetTheHrTeamSection = `div[class='elementor-element elementor-element-3aea135 elementor-widget elementor-widget-heading'] h6[class='elementor-heading-title elementor-size-default']`
   const textForCareerTab = 'cypress\\e2e\\topNavBar\\careerTabTexts.json'
 
-  it('Career tab should contain right titles', () => {
+  it('Career tab should contain correct titles', () => {
     onCareerPage.checkTitles().should('eq', 'Career – Solwit')
   })
 
@@ -29,15 +29,15 @@ describe('Career tab', () => {
     onCareerPage.checkRedirectionToPlOffers().should('eq', 'Kariera – Solwit')
   })
 
-  it('"\What we offer"\ section should contain right text', () => {
+  it('"\What we offer"\ section should contain correct text', () => {
     onCareerPage.sectionShouldContainCorrectText(whatWeOfferSection).should('include.text', 'What we offer:')
   })
 
-  it('"\Meet the HR team"\ section should contain right text', () => {
+  it('"\Meet the HR team"\ section should contain correct text', () => {
     onCareerPage.sectionShouldContainCorrectText(meetTheHrTeamSection).should('include.text', 'Meet the HR Team:')
   })
 
-  it('Tiles should contain right text', () => {
+  it('Tiles should contain correct text', () => {
     onCareerPage.getTextFromAllTilesFromSectionWhatWeOffer().each(($el, index) => {
       cy.readFile(textForCareerTab).its(`CareerTab.WhatWeOfferSection[${index}].Text`).should('eq', $el.text().replace(/[\n\t]/g, ''))
     })
@@ -49,7 +49,7 @@ describe('Career tab', () => {
     onCareerPage.checkRedirectionToLinkedInPage().should('have.attr', 'target', '_blank').should('have.attr', 'href', 'https://www.linkedin.com/company/solwit-sa/')
   })
 
-  it('#SolwitTeam section should contain right text', () => {
+  it('#SolwitTeam section should contain correct text', () => {
     cy.readFile(textForCareerTab).its(`CareerTab.#SolwitTeam`).then(text=>{
       onCareerPage.checkIfTextIsVisible(text).should('be.visible')
     })
