@@ -1,52 +1,51 @@
+import { onAboutUsPage } from "../support/page_objects/aboutUsPage";
+import { onMainPage } from "../support/page_objects/mainPage";
 Cypress.once('uncaught:exception', (err, runnable) => {
     return false;
   })
   
   
   describe('about us tabs should be visible', () => {
+    beforeEach(() => {
+        onMainPage.visit()
+        onMainPage.acceptCookiesEn()
+    })
+    
     it('should see "about us" tab', () => {
-      cy.visit('/about-us')
-      cy.get('#cookie_action_accept').click()
-      cy.contains('h1','About us')
+        onMainPage.navigateToTab("ABOUT US +","About us")
+        cy.contains('h1','About us').should('be.visible')
     })
     
     it('should see "management" tab', () => {
-        cy.visit('/about-us/#management')
-        cy.get('#cookie_action_accept').click()
-        cy.contains('h2','Management')
+        onMainPage.navigateToTab("ABOUT US +", "Management")
+        cy.contains('h2','Management').should('be.visible')
     })
 
     it('should see "culture and policies" tab', () => {
-        cy.visit('/about-us/culture-and-policies/')
-        cy.get('#cookie_action_accept').click()
-        cy.contains('h1','Culture and Policies')
+        onMainPage.navigateToTab("ABOUT US +", "Culture and policies")
+        cy.contains('h1','Culture and Policies').should('be.visible')
     })
 
     it('should see "partnerships" tab', () => {
-        cy.visit('/about-us/#partnerships')
-        cy.get('#cookie_action_accept').click()
-        cy.contains('h2','PARTNERSHIPS')
+        onMainPage.navigateToTab("ABOUT US +", "Partnerships")
+        cy.contains('h2','PARTNERSHIPS').should('be.visible')
     })
 
     it('should see "solwits social responsibility" tab', () => {
-        cy.visit('/about-us/solwits-social-responsibility/')
-        cy.get('#cookie_action_accept').click()
-        cy.contains('h1','Solwit’s social responsibility')
+        onMainPage.navigateToTab("ABOUT US +", "Social Responsibility")
+        cy.contains('h1','Solwit’s social responsibility').should('be.visible')
     })
 
     it('should see "solwit group" tab', () => {
-        cy.visit('/about-us/#solwit-group')
-        cy.get('#cookie_action_accept').click()
-        cy.contains('h2','Solwit S.A. subsidiary')
+        onMainPage.navigateToTab("ABOUT US +", "Solwit Group")
+        cy.contains('h2','Solwit S.A. subsidiary').should('be.visible')
     })
 
-    it.only('should see correct content about CEO', () => {
-        cy.visit('/about-us/#management')
-        cy.get('#cookie_action_accept').click()
+    it('should see correct content about CEO', () => {
+        onMainPage.navigateToTab("ABOUT US +", "Management")
         cy.get('.icon-right-arrow2').first().click()
-        cy.contains('h1','Leszek Pankiewicz')
-        cy.contains('p','A graduate of the Faculty of Electronics')        
-        
+        cy.contains('h1','Leszek Pankiewicz').should('be.visible')
+        cy.contains('p','A graduate of the Faculty of Electronics').should('be.visible')
     })
 
   })

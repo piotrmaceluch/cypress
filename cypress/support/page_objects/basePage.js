@@ -9,7 +9,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
     acceptCookiesEn() {
         cy.get('#cookie_action_accept').click()
-    }
+    }      
+
 }
 export const basePage = new BasePage()
 

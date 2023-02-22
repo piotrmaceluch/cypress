@@ -5,7 +5,7 @@ module.exports = defineConfig({
   viewportWidth: 1920,
 
   e2e: {
-    baseUrl: 'https://solwit.com/',
+    baseUrl: 'https://solwit.com/en/',
     setupNodeEvents(on, config) {
       // implement node event listeners here  
     },
